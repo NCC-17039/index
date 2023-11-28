@@ -3,13 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
     <title>Julian Bashir</title>
 
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- 建站日期  -->
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+         /* Date.UTC() --
+        year -
+        month -
+        day -
+        hours -
+        minutes -
+        seconds -
+        microseconds - */
+        var t1 = Date.UTC(2022,11,8,20,30,00);
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML=+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒 ";
+    }
+    siteTime();
+</script>
 
 </head>
 
@@ -26,8 +62,9 @@
         <section class="landing">
             <div class="row vertical-center">
                 <div class="col-lg-8 text-left pb-5">
-                    <h1 class="display-1">Julian Bashir</h1>
-                    <p class="lead pl-2">星际联邦成员一枚</p>
+                    <h1 class="display-1"><b>StarShine</b></h1>
+                    <p class="lead pl-2">星际联邦星辰号 NCC-17039</p>
+                    <p class="lead pl-2">——Julian Bashir</p>
                 </div>
                 <div class="col-lg-4 text-center my-auto pb-5 rounded-circle"><img class="img-fluid rounded-circle"
                         src="https://res.cloudinary.com/dozc6z49t/image/upload/v1701091704/img-for-me/logo-now.jpg"></div>
@@ -344,7 +381,7 @@
                             </div>
                     </div>
                 <div class="mt-5 mb-5 text-center">
-                    <h4>Made with ♥ by Kartik Choudhary</h1>
+                    <p><b>© 2021-2023 Julian Bashir</b><br><span>本站已稳定运行<span id="sitetime" style="color: #0196e3;"></span></p>
                 </div>
         </section>
     </div>
