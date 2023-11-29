@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1200, initial-scale=1.0">
     <title>Julian Bashir</title>
-
+    
+    <!-- CSS等  -->
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- 建站日期  -->
+    
+    <!-- 网站建站日期显示  -->
 <script language=javascript>
     function siteTime(){
         window.setTimeout("siteTime()", 1000);
@@ -46,42 +48,29 @@
     }
     siteTime();
 </script>
+
+    <!-- 网页分享设置  -->
     <!-- 网站图标 -->
     <link rel="icon" href="https://res.cloudinary.com/dozc6z49t/image/upload/v1701091704/img-for-me/logo-now.jpg" type="image/jpeg">
     <!-- 网站分享简介 -->
     <meta name="description" content="这儿是Julian Bashir的个人网站，欢迎！">
     <!-- 网站分享图片 -->
     <meta property="og:image" content="https://res.cloudinary.com/dozc6z49t/image/upload/v1692607429/img-for-me/header-3.jpg">
+
+    <!-- 嘿嘿，你猜  -->
     <script>
-        function fuckyou() {
-            window.close(); //关闭当前窗口(防抽)
-            window.location = "about:blank"; //将当前窗口跳转置空白页
-        }
-        function ck() {
-            console.profile();
-            console.profileEnd();
-            //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
-            if (console.clear) { console.clear() };
-            if (typeof console.profiles == "object") {
-                return console.profiles.length > 0;
-            }
-        }
-        function hehe() {
-            if ((window.console && (console.firebug || console.table && /firebug/i.test(console.table()))) || (typeof opera == 'object' && typeof 
- 
-opera.postError == 'function' && console.profile.length > 0)) {
-                fuckyou();
-            }
-            if (typeof console.profiles == "object" && console.profiles.length > 0) {
-                fuckyou();
-            }
-        }
-        hehe();
-        window.onresize = function () {
-            if ((window.outerHeight - window.innerHeight) > 200)
-                //判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
-                fuckyou();
-        }
+        // 禁用右键菜单和快捷键
+window.oncontextmenu = function () { return false; }
+window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
+
+// 如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面
+var h = window.innerHeight, w = window.innerWidth;
+window.onresize = function () {
+  if (h != window.innerHeight || w != window.innerWidth) {
+    window.close();
+    window.location = "about:blank";
+  }
+}
 </script>
 
 </head>
