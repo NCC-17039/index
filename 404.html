@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <title>404-未找到</title>
+  <!-- 嘿嘿，你猜  -->
+    <script>
+// 禁用右键菜单和快捷键
+window.oncontextmenu = function () { return false; }
+window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
+
+// 如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变那么呵呵
+var h = window.innerHeight, w = window.innerWidth;
+window.onresize = function () {
+  if (h != window.innerHeight || w != window.innerWidth) {
+    window.close();
+    window.location = "about:blank";
+  }
+}
+        
+// 版权限制，禁止复制
+document.oncontextmenu = function() { return false; };
+document.onselectstart = function() { return false; };
+document.oncopy = function() { return false; };
+document.oncut = function() { return false; };
+</script>
+</head>
+<body>
+
+  <img src="/img/404.png" alt="404">
+
+</body>
+</html>
