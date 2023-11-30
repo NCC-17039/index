@@ -3,10 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:100,200,300,400,500,600,700|Roboto:300,400,500,700,900&display=swap">
   <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Noto Serif SC', serif;
+      color: #333;
+    }
+
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .image-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      filter: blur(10px);
+      z-index: -1;
+      border-radius: 10px;
+    }
+
     img {
       max-width: 100%;
       height: auto;
+      position: relative;
+      z-index: 1;
+      border-radius: 10px;
     }
   </style>
   <title>404-未找到</title>
@@ -33,11 +76,12 @@ document.oncut = function() { return false; };
 </script>
 </head>
 <body>
-  <center>
+  <div class="container">
     <h1>请注意，你在星联未探索区域！</h1>
-    <h1>Please note, you are in unknown territory!</h1>
-  <img src="/img/404.png" alt="404">
-  </center>
-
+    <h2>Please note, you are in unknown territory!</h2>
+    <div class="image-container">
+      <img src="/img/404.png" alt="404">
+    </div>
+  </div>
 </body>
 </html>
