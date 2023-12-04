@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <title>GPT AI</title>
+    
+    <!-- CSS等  -->
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/4.0.0/animate.min.css" />
+    <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!-- 网站建站日期显示  -->
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+         /* Date.UTC() --
+        year -
+        month -
+        day -
+        hours -
+        minutes -
+        seconds -
+        microseconds - */
+        var t1 = Date.UTC(2021,12,26,20,30,00);
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML=+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒 ";
+    }
+    siteTime();
+</script>
+
+    <!-- 网页分享设置  -->
+    <!-- 网站图标 -->
+    <link rel="icon" href="https://res.cloudinary.com/dozc6z49t/image/upload/v1701091704/img-for-me/logo-now.jpg" type="image/jpeg">
+    <!-- 网站分享简介 -->
+    <meta name="description" content="这儿是Julian Bashir的个人网站，欢迎！">
+    <!-- 网站分享图片 -->
+    <meta property="og:image" content="https://res.cloudinary.com/dozc6z49t/image/upload/v1692607429/img-for-me/header-3.jpg">
+
+    <!-- 嘿嘿，你猜  -->
+    <script>
+// 禁用右键菜单和快捷键
+window.oncontextmenu = function () { return false; }
+window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
+
+// 如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变那么呵呵
+var h = window.innerHeight, w = window.innerWidth;
+window.onresize = function () {
+  if (h != window.innerHeight || w != window.innerWidth) {
+    window.close();
+    window.location = "about:blank";
+  }
+}
+        
+// 版权限制，禁止复制
+document.oncontextmenu = function() { return false; };
+document.onselectstart = function() { return false; };
+document.oncopy = function() { return false; };
+document.oncut = function() { return false; };
+</script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-sm navbar-light mb-1">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="">Bashir's Home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 首页banner -->
+
+    <div class="container">
+        <section class="landing">
+            <div class="row vertical-center">
+                <div class="col-lg-8 text-left pb-5">
+                    <h1 class="display-1"><b>GPT AI</b></h1>
+                    <p class="lead pl-2">星际联邦星辰号 <b>超级大脑</b></p>
+                    <p class="lead pl-2">——Julian Bashir</p>
+                    <hr>
+                    <iframe src="https://uptime.starshine.love/badge?theme=light" width="250" height="30" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <div class="col-lg-4 text-center my-auto pb-5 rounded-circle"><img class="img-fluid rounded-circle"
+                        src="https://res.cloudinary.com/dozc6z49t/image/upload/v1701686301/img-for-me/kpnx0pfnvphmrmvbepfy.jpg"></div>
+            </div>
+        </section>
+
+        <!-- 关于 -->
+
+        <section class="mt-5 mb-5">
+            <h4 class="display-4">A little about me,</h4>
+            <div class="row">
+                <div class="col-lg-6 wrap text-left">
+                    <div class="about-desc">
+                        <h1 class="bold-text">About</h1>
+                        <div class="pt-5">
+                            <h2 class="mb-5">Hello!</h2>
+                            <p>这里是星辰号内部（嘻嘻）
+                                <br>
+                                喜欢各种各样的折腾，会一点代码，会剪视频，偶尔喜欢“发疯”；希望能和你一起，理解这星辰大海
+                                <br>
+                                高中生 // TREKKER（星际迷航迷）🖖 // 坐标星际联邦
+                                <br>
+                                Ps:如果看不到下面的社交图标或完整网站页面，请关闭广告拦截程序和打开代理
+                            </p>
+                            <ul class="social-links list-unstyled mt-4">
+                                <li><a href="mailto:master@starshine.love" target="_blank">
+                                        <ion-icon name="mail-unread-outline"></ion-icon>
+                                    </a></li>
+                                <li><a href="https://t.me/NCC17039" target="_blank">
+                                        <ion-icon name="paper-plane-outline"></ion-icon>
+                                    </a></li>
+                                <li><a href="https://space.bilibili.com/492976551" target="_blank">
+                                        <ion-icon name="logo-youtube"></ion-icon>
+                                    </a></li>
+                                <li><a href="https://weibo.com/u/7818171482" target="_blank">
+                                        <ion-icon name="logo-twitter"></ion-icon>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 我的技能 -->
+                
+                <div class="col-lg-6 wrap align-content-center">
+                    <div class="row mt-5 flex-column">
+                        <div class="col-md-8">
+                            <h2 class="mb-4">My Skills</h2>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="progress-wrap">
+                                <h4>帅哥</h4>
+                                <div class="progress progress-style">
+                                    <div class="progress-bar color-1" role="progressbar" aria-valuenow="100"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="progress-wrap">
+                                <h4>主持</h4>
+                                <div class="progress progress-style">
+                                    <div class="progress-bar color-1" role="progressbar" aria-valuenow="95"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:95%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="progress-wrap">
+                                <h4>吹牛</h4>
+                                <div class="progress progress-style">
+                                    <div class="progress-bar color-1" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:20%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="interests pt-5 pb-5">
+
+            <!-- 我最熟悉的 -->
+
+            <h1 class="display-4">Tech I'm familiar with</h1>
+                <h1 class="bold-text bg-text">Tech Stack</h1>
+
+                <div class="row pt-5">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="icon-box">
+                            <ion-icon name="musical-note-outline"></ion-icon>
+                            <h3>音游玩家</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <ion-icon name="logo-github"></ion-icon>
+                            <h3>Open Source</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <ion-icon name="logo-css3"></ion-icon>
+                            <h3>CSS</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <ion-icon name="logo-html5"></ion-icon>
+                            <h3>Html</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <ion-icon name="infinite-outline"></ion-icon>
+                            <h3>白日梦想家</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <ion-icon name="logo-apple"></ion-icon>
+                            <h3>Apple</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <ion-icon name="globe-outline"></ion-icon>
+                            <h3>爱折腾</h3>
+                        </div>
+                    </div>
+                    <!----
+                    <div class="col-lg-3 col-md-4 mt-4">
+                        <div class="icon-box">
+                            <ion-icon name="logo-github"></ion-icon>
+                            <h3>Dooba</h3>
+                        </div>
+                    </div>-->
+                </div>
+
+        </section>
+
+        <!-- 经历 -->
+        
+        <section>
+            <!--
+            <h1 class="display-4 mt-5">Experience</h1>
+                <h1 class="bold-text bg-text">Profile</h1>
+                <div class="row d-flex">
+                    <div class="col-md-10">
+                        <h4 class="dmb-4 mt-2 profile-text">I'm a {Job Profile} from {Location}. Bees have 100 percent
+                            employment, but we do jobs like taking the crud out.</h4>
+
+                        <div class="mt-3">
+                            <div class="py-4">
+                                <div class="desc">
+                                    <h4>UX & Interaction Designer</h4>
+                                    <p>The Bee Company</p>
+                                </div>
+                                <div>
+                                    <p>2020 - 2020</p>
+                                </div>
+                            </div>
+
+                            <div class="py-4">
+                                <div class="desc">
+                                    <h4>{jobPosition}</h4>
+                                    <p>{company}</p>
+                                </div>
+                                <div>
+                                    <p>{startYear} - {endYear}</p>
+                                </div>
+                            </div>
+
+                            <div class="py-4">
+                                <div class="desc">
+                                    <h4>{jobPosition}</h4>
+                                    <p>{company}</p>
+                                </div>
+                                <div>
+                                    <p>{startYear} - {endYear}</p>
+                                </div>
+                            </div>
+                        </div>-->
+
+            <!-- 教育经历 -->
+
+                        <!--<h1 class="display-4 mt-5">Education</h4>
+                            <h1 class="bold-text bg-text">Academics</h1>
+                            <div class="py-4">
+                                <div class="desc">
+                                    <h4>Master Degree in Computer Science</h4>
+                                    <p>Harvard University</p>
+                                </div>
+                                <div>
+                                    <p>2013 - 2014</p>
+                                </div>
+                            </div>
+
+                            <div class="py-4">
+                                <div class="desc">
+                                    <h4>{degree}</h4>
+                                    <p>{schoolName}</p>
+                                </div>
+                                <div>
+                                    <p>{startYear} - {endYear}</p>
+                                </div>
+                            </div>
+
+                            <div class="py-4">
+                                <div class="desc">
+                                    <h4>{degree}</h4>
+                                    <p>{schoolName}</p>
+                                </div>
+                                <div>
+                                    <p>{startYear} - {endYear}</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+        </section>-->
+        <section>
+
+            <!-- 我的其它网站 -->
+            
+            <h1 class="display-4 mt-5">Some of my sites</h4>
+                <h1 class="bold-text bg-text">Project</h1>
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-4">
+                        <div class="blog-entry">
+                            <a href="https://blog.starshine.love/" target="_blank">
+                                <img class="img-fluid" src="https://res.cloudinary.com/dozc6z49t/image/upload/v1701159182/img-for-me/q5zx2kxxobq6swjqey8z.png">
+                            </a>
+                            <div class="text p-4 d-block">
+                                <div class="meta mb-3">
+                                    <div>博客</div>
+                                </div>
+                                <h3 class="heading"><a class="link" href="https://blog.starshine.love/" target="_blank">我的博客</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blog-entry">
+                            <a href="https://video.starshine.love/" target="_blank">
+                                <img class="img-fluid" src="https://res.cloudinary.com/dozc6z49t/image/upload/v1701158666/img-for-me/ayodgowvztrhswvzjgb8.png">
+                            </a>
+                            <div class="text p-4">
+                                <div class="meta mb-3">
+                                    <div>影音</div>
+                                </div>
+                                <h3 class="heading"><a class="link" href="https://video.starshine.love/" target="_blank">免费影视</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blog-entry">
+                            <a href="/app/music.html" target="_blank">
+                                <img class="img-fluid" src="https://res.cloudinary.com/dozc6z49t/image/upload/v1701158623/img-for-me/kgapnkajwmt1jjpcfetu.png">
+                            </a>
+                            <div class="text p-4">
+                                <div class="meta mb-3">
+                                    <div>影音</div>
+                                </div>
+                                <h3 class="heading"><a class="link" href="/app/music.html" target="_blank">星辰音乐库</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blog-entry">
+                            <a href="https://drive.starshine.love/" target="_blank">
+                                <img class="img-fluid" src="https://res.cloudinary.com/dozc6z49t/image/upload/v1701158583/img-for-me/hdxahq98tsac4qhlia0l.png">
+                            </a>
+                            <div class="text p-4 d-block">
+                                <div class="meta mb-3">
+                                    <div>影音</div>
+                                </div>
+                                <h3 class="heading"><a class="link" href="https://drive.starshine.love/" target="_blank">星辰存储库</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blog-entry">
+                            <a href="https://noscn.xyz/" target="_blank">
+                                <img class="img-fluid" src="https://res.cloudinary.com/dozc6z49t/image/upload/v1701158600/img-for-me/ecmgk5yymburwv3dp6zh.png">
+                            </a>
+                            <div class="text p-4">
+                                <div class="meta mb-3">
+                                    <div>网盘</div>
+                                </div>
+                                <h3 class="heading"><a class="link" href="https://noscn.xyz/" target="_blank">NOS网盘</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+        </section>
+        <section>
+
+            <!-- 联系 -->
+            
+            <!--
+            <h1 class="display-4 mt-5">Let's Talk</h1>
+            <h1 class="bold-text bg-text">Contact</h1>
+                    <div class="text-left">
+                            <div class="pt-5">
+                                <h2 class="mb-5">Have a great product and need a {job profile} or just want to have a chat? 
+                                <br/>
+                                My inbox is always open!</h2>
+                                <ul class="social-links list-unstyled mt-4">
+                                    <li><a href="#">
+                                            <ion-icon name="mail-outline"></ion-icon>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <ion-icon name="logo-github"></ion-icon>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <ion-icon name="logo-linkedin"></ion-icon>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <ion-icon name="logo-twitter"></ion-icon>
+                                        </a></li>
+                                </ul>
+                            </div>
+                    </div>-->
+                <div class="mt-5 mb-5 text-center">
+                    <p><b>© 2021-2024 Julian Bashir</b>
+                        <br>
+                        <span>本站已稳定运行 <span id="sitetime" style="color: #0196e3;"></span></p>
+                </div>
+        </section>
+    </div>
+
+    <!-- 感谢 Kartik Choudhary <3 -->
+    <!-- 感谢在开源社区的每个人，感谢！ -->
+
+    <!-- Scripts -->
+    <script src="https://lib.baomitu.com/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="https://lib.baomitu.com/ionicons/5.1.2/ionicons.js"></script>
+
+</body>
+
+</html>
