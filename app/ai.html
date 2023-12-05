@@ -63,6 +63,8 @@
 window.oncontextmenu = function () { return false; }
 window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
 
+window.onbeforeunload = function() {
+  while (true) {
 // 使用Performance API检测开发者工具
 function isDevToolsOpen() {
   let isOpen = false;
@@ -78,11 +80,12 @@ function isDevToolsOpen() {
 // 检测开发者工具是否打开
 if (isDevToolsOpen()) {
   // 在这里添加处理开发者工具打开的代码
-  // 例如，可以显示一个警告或将用户重定向到不同页面
   alert("检测到开发者工具已打开。采取相应行动。");
   window.close();
   window.location = "about:blank";
 }
+  }
+};
 
 // 版权限制，禁止复制
 document.oncontextmenu = function() { return false; };
