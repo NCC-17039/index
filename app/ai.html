@@ -63,14 +63,25 @@
 window.oncontextmenu = function () { return false; }
 window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
 
-// 如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变那么呵呵
-var h = window.innerHeight, w = window.innerWidth;
-window.onresize = function () {
-  if (h != window.innerHeight || w != window.innerWidth) {
+// 检测开发者工具是否打开
+var devConsoleOpen = false;
+console.log("");
+console.clear();
+
+console.log = function () {
+  devConsoleOpen = true;
+};
+
+// 如果开发者工具打开，则采取相应行动（根据需求修改）
+window.onload = function () {
+  if (devConsoleOpen) {
+    // 在这里添加处理开发者工具打开的代码
+    // 例如，可以显示一个警告或将用户重定向到不同页面
+    alert("检测到开发者工具已打开。采取相应行动。");
     window.close();
     window.location = "about:blank";
   }
-}
+};
         
 // 版权限制，禁止复制
 document.oncontextmenu = function() { return false; };
