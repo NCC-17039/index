@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://blog.aepkill.com/demos/devtools-detector/devtools-detector.js"></script>
     
     <!-- 网站建站日期显示  -->
 <script language=javascript>
@@ -63,19 +62,36 @@
 // 禁用右键菜单和快捷键
 window.oncontextmenu = function () { return false; }
 window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
+
+window.onbeforeunload = function() {
+  const intervalId = setInterval(function() {
+    // 使用Performance API检测开发者工具
+    function isDevToolsOpen() {
+      let isOpen = false;
+      const start = performance.now();
+      debugger;
+      const end = performance.now();
+      if (end - start > 100) {
+        isOpen = true;
+      }
+      return isOpen;
+    }
+
+    // 检测开发者工具是否打开
+    if (isDevToolsOpen()) {
+      // 在这里添加处理开发者工具打开的代码
+      alert("检测到开发者工具已打开。采取相应行动。");
+      window.close();
+      window.location = "about:blank";
+    }
+  }, 2000);
+};
      
 // 版权限制，禁止复制
 document.oncontextmenu = function() { return false; };
 document.onselectstart = function() { return false; };
 document.oncopy = function() { return false; };
 document.oncut = function() { return false; };
-</script>
-    <script>
-devtoolsDetector.addListener(function(isOpen) {
-    if(isOpen){
-        window.location.href = "https://www.baidu.com";
-    }
-});
 </script>
 </head>
 
