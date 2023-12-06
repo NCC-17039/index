@@ -3,46 +3,70 @@
 This not my design, it's actually designed
 by Tristan Fisher(https://www.tristanfisher.com).
 -->
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=1200, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
-    <title>Home | Khushal Sharma</title>
-    <meta name="title" content="Home | Khushal Sharma" />
-    <meta name="description" content="Khushal Sharma: programmer from India." />
+    <title>APPS | Julian Bashir</title>
+    <meta name="title" content="APPS | Julian Bashir" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://metatags.io/" />
-    <meta property="og:title" content="Home | Khushal Sharma" />
-    <meta
-      property="og:description"
-      content="Khushal Sharma: programmer from India."
-    />
-    <meta property="og:image" content="https://i.imgur.com/PklmhzK.png" />
+    <!-- 网页分享设置  -->
+    <!-- 网站图标 -->
+    <link rel="icon" href="https://res.cloudinary.com/dozc6z49t/image/upload/v1701091704/img-for-me/logo-now.jpg" type="image/jpeg">
+    <!-- 网站分享简介 -->
+    <meta name="description" content="星际联邦星辰号 超级大脑 内置插件库">
+    <!-- 网站分享图片 -->
+    <meta property="og:image" content="https://res.cloudinary.com/dozc6z49t/image/upload/v1692607429/img-for-me/header-3.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://metatags.io/" />
-    <meta property="twitter:title" content="Home | Khushal Sharma" />
-    <meta
-      property="twitter:description"
-      content="Khushal Sharma: programmer from India."
-    />
-    <meta property="twitter:image" content="https://i.imgur.com/PklmhzK.png" />
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/app/stylesheets/style.css" />
     <script
       src="https://kit.fontawesome.com/1a48924413.js"
       crossorigin="anonymous"
     ></script>
+    <!-- 嘿嘿，你猜  -->
+    <script>
+// 禁用右键菜单和快捷键
+window.oncontextmenu = function () { return false; }
+window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
+
+window.onbeforeunload = function() {
+  const intervalId = setInterval(function() {
+    // 使用Performance API检测开发者工具
+    function isDevToolsOpen() {
+      let isOpen = false;
+      const start = performance.now();
+      debugger;
+      const end = performance.now();
+      if (end - start > 100) {
+        isOpen = true;
+      }
+      return isOpen;
+    }
+
+    // 检测开发者工具是否打开
+    if (isDevToolsOpen()) {
+      // 在这里添加处理开发者工具打开的代码
+      alert("检测到开发者工具已打开。采取相应行动。");
+      window.close();
+      window.location = "about:blank";
+    }
+  }, 2000);
+};
+     
+// 版权限制，禁止复制
+document.oncontextmenu = function() { return false; };
+document.onselectstart = function() { return false; };
+document.oncopy = function() { return false; };
+document.oncut = function() { return false; };
+</script>
+    <!-- 网站分析 -->
+    <script type="text/javascript" src="//api.tongjiniao.com/c?_=590939357582622720" async></script>
   </head>
 
   <body>
     <header id="header">
-      <div id="head">Khushal Sharma<span class="cursor">_</span></div>
+      <div id="head">GPT AI <span class="cursor">插件库</span></div>
     </header>
 
     <main id="content">
@@ -55,10 +79,14 @@ by Tristan Fisher(https://www.tristanfisher.com).
 
         <div id="screen">
           <div id="innercontent">
-            <div id="contentheader">INTRO</div>
+            <div id="contentheader">内容</div>
+            <div class="topic_text">你们好，欢迎来到我们星辰号的APP库一览表，我是你们的舰长，Julian Bashir。欢迎使用！</div>
 
-            <div class="topic_header">NAME</div>
-            <div class="topic_text">Khushal Sharma</div>
+            <div class="topic_header">音乐</div>
+            <div class="topic_text">嘿，我们有来自全地球的音乐库，依托强大的网易版权库，给各位听全球最好听的音乐
+              <br>
+              <a class="link" href="/app/music.html" target="_blank">链接</a>
+            </div>
 
             <div class="topic_header">NICK(S)</div>
             <div class="topic_text">khush, Logan1x, sharmakhushal78</div>
