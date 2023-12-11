@@ -83,14 +83,26 @@ document.oncut = function() { return false; };
 
         <div id="screen">
           <div id="innercontent">
+            <div class="topic_header">查看最新文章</div>
               <!-- RSS 订阅源的容器 -->
     <div id="rss-feed"></div>
-
     <!-- 初始化 FeedEk -->
     <script>
         $(document).ready(function() {
             $('#rss-feed').FeedEk({
                 FeedUrl: 'https://www.douban.com/feed/people/starscn/notes', // 替换成你的 RSS 订阅源的 URL
+                itemTitle: '.topic_header'
+            });
+        });
+    </script>
+            <div class="topic_header">查看2023年12月10日以前的文章</div>
+            <!-- RSS 订阅源的容器 -->
+    <div id="rss-feed"></div>
+    <!-- 初始化 FeedEk -->
+    <script>
+        $(document).ready(function() {
+            $('#rss-feed').FeedEk({
+                FeedUrl: 'https://spacemy.xlog.app/feed', // 替换成你的 RSS 订阅源的 URL
                 itemTitle: '.topic_header'
             });
         });
