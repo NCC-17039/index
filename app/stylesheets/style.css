@@ -116,20 +116,17 @@ body {
 }
 
 .topic_header {
-  font-family: "Noto Serif SC", sans-serif;
   color: #7cfc11;
   margin-top: 1.5em;
 }
 
 .topic_text {
-  font-family: "Noto Serif SC", sans-serif;
   margin-left: 1.75em;
   margin-top: 0.125em;
   margin-right: 1.75em;
 }
 
 ul {
-  font-family: "Noto Serif SC", sans-serif;
   padding: 0 0 0 1.5em;
   margin: 0.25em 0;
 }
@@ -210,7 +207,6 @@ a:hover {
 }
 
 .project-button {
-  font-family: "Noto Serif SC", sans-serif;
   text-decoration-color: #7cfc11;
 }
 
