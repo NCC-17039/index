@@ -23,7 +23,39 @@
     <script src="https://lib.baomitu.com/FeedEk/3.2.0/js/FeedEk.min.js"></script>
     <!-- 嘿嘿，你猜  -->
     <script>
-        // your existing scripts...
+        // 禁用右键菜单和快捷键
+window.oncontextmenu = function () { return false; }
+window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
+
+window.onbeforeunload = function() {
+  const intervalId = setInterval(function() {
+    // 使用Performance API检测开发者工具
+    function isDevToolsOpen() {
+      let isOpen = false;
+      const start = performance.now();
+      debugger;
+      const end = performance.now();
+      if (end - start > 100) {
+        isOpen = true;
+      }
+      return isOpen;
+    }
+
+    // 检测开发者工具是否打开
+    if (isDevToolsOpen()) {
+      // 在这里添加处理开发者工具打开的代码
+      alert("检测到开发者工具已打开。采取相应行动。");
+      window.close();
+      window.location = "about:blank";
+    }
+  }, 2000);
+};
+     
+// 版权限制，禁止复制
+document.oncontextmenu = function() { return false; };
+document.onselectstart = function() { return false; };
+document.oncopy = function() { return false; };
+document.oncut = function() { return false; };
     </script>
     <!-- 网站分析 -->
     <script type="text/javascript" src="//api.tongjiniao.com/c?_=590939357582622720" async></script>
@@ -65,7 +97,8 @@
 
             $('#rss-feed2').FeedEk({
                 FeedUrl: 'https://spacemy.xlog.app/feed',
-                itemTitle: '.topic_header'
+                itemTitle: '.topic_header',
+                itemDescription: '*'
             });
         });
     </script>
