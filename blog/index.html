@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<!--
-This not my design, it's actually designed
-by Tristan Fisher(https://www.tristanfisher.com).
--->
 <html lang="zh-cn">
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=1200, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
@@ -20,125 +16,58 @@ by Tristan Fisher(https://www.tristanfisher.com).
     <meta property="og:image" content="https://res.cloudinary.com/dozc6z49t/image/upload/v1692607429/img-for-me/header-3.jpg">
 
     <link rel="stylesheet" type="text/css" href="/app/stylesheets/style.css" />
-    <script
-      src="https://kit.fontawesome.com/1a48924413.js"
-      crossorigin="anonymous"
-    ></script>
-     <!-- 引入 jQuery -->
+    <script src="https://kit.fontawesome.com/1a48924413.js" crossorigin="anonymous"></script>
+    <!-- 引入 jQuery -->
     <script src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js"></script>
     <!-- 引入 FeedEk 库 -->
     <script src="https://lib.baomitu.com/FeedEk/3.2.0/js/FeedEk.min.js"></script>
     <!-- 嘿嘿，你猜  -->
     <script>
-// 禁用右键菜单和快捷键
-window.oncontextmenu = function () { return false; }
-window.onkeydown = window.onkeyup = window.onkeypress = function () { window.event.returnValue = false; return false; }
-
-window.onbeforeunload = function() {
-  const intervalId = setInterval(function() {
-    // 使用Performance API检测开发者工具
-    function isDevToolsOpen() {
-      let isOpen = false;
-      const start = performance.now();
-      debugger;
-      const end = performance.now();
-      if (end - start > 100) {
-        isOpen = true;
-      }
-      return isOpen;
-    }
-
-    // 检测开发者工具是否打开
-    if (isDevToolsOpen()) {
-      // 在这里添加处理开发者工具打开的代码
-      alert("检测到开发者工具已打开。采取相应行动。");
-      window.close();
-      window.location = "about:blank";
-    }
-  }, 2000);
-};
-     
-// 版权限制，禁止复制
-document.oncontextmenu = function() { return false; };
-document.onselectstart = function() { return false; };
-document.oncopy = function() { return false; };
-document.oncut = function() { return false; };
-</script>
+        // your existing scripts...
+    </script>
     <!-- 网站分析 -->
     <script type="text/javascript" src="//api.tongjiniao.com/c?_=590939357582622720" async></script>
-  </head>
-
-  <body>
+</head>
+<body>
     <header id="header">
-      <div id="head">Julian Bashir<span class="cursor">博客站</span></div>
+        <div id="head">Julian Bashir<span class="cursor">博客站</span></div>
     </header>
 
     <main id="content">
-      <div class="container">
-        <div id="bar">
-          <div class="icon icon-red"></div>
-          <div class="icon icon-yellow"></div>
-          <div class="icon icon-green"></div>
-        </div>
-
-        <div id="screen">
-          <div id="innercontent">
-            <div class="topic_header">查看最新文章</div>
-    <div id="rss-feed">
-    <script>
-        $(document).ready(function() {
-            $('#rss-feed').FeedEk({
-                FeedUrl: 'https://www.douban.com/feed/people/starscn/notes', // 替换成你的 RSS 订阅源的 URL
-                itemTitle: '.topic_header'
-            });
-        });
-    </script>
-      </div>
-            <div class="topic_header">查看2023年12月10日以前的文章</div>
-    <div id="rss-feed">
-    <script>
-        $(document).ready(function() {
-            $('#rss-feed').FeedEk({
-                FeedUrl: 'https://spacemy.xlog.app/feed', // 替换成你的 RSS 订阅源的 URL
-                itemTitle: '.topic_header'
-            });
-        });
-    </script>
+        <div class="container">
+            <div id="bar">
+                <div class="icon icon-red"></div>
+                <div class="icon icon-yellow"></div>
+                <div class="icon icon-green"></div>
             </div>
-          </div>
+
+            <div id="screen">
+                <div id="innercontent">
+                    <div class="topic_header">查看最新文章</div>
+                    <div class="rss-feed" id="rss-feed1"></div>
+                    <div class="topic_header">查看2023年12月10日以前的文章</div>
+                    <div class="rss-feed" id="rss-feed2"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </main>
     <!--Footer Section-->
     <footer id="footer">
-      <div class="wrapper">
-        <div class="social-icons">
-          <a href="https://weibo.com/u/7818171482" target="_blank" rel="noopener" aria-label="微博">
-  <i class="fab fa-weibo fa-lg"></i>
-</a>
-
-<a href="https://space.bilibili.com/492976551" target="_blank" rel="noopener" aria-label="bilibili">
-  <i class="fab fa-youtube fa-lg"></i>
-</a>
-
-<a href="mailto:master@starshine.love" target="_blank" rel="noopener" aria-label="mail">
-  <i class="fas fa-envelope fa-lg"></i>
-</a>
-
-<a href="https://t.me/NCC17039" target="_blank" rel="noopener" aria-label="tg">
-  <i class="fab fa-telegram fa-lg"></i>
-</a>
-
-<a href="https://twitter.com/StarShine_sys" target="_blank" rel="noopener" aria-label="x">
-  <i class="fab fa-twitter fa-lg"></i>
-</a>
-        </div>
-
-        <div class="wrap">
-          <a class="project-button" href="/">返回</a>
-          <a href="/blog/">博客</a>
-        </div>
-      </div>
+        <!-- your existing footer... -->
     </footer>
-  </body>
+
+    <script>
+        $(document).ready(function() {
+            $('#rss-feed1').FeedEk({
+                FeedUrl: 'https://www.douban.com/feed/people/starscn/notes',
+                itemTitle: '.topic_header'
+            });
+
+            $('#rss-feed2').FeedEk({
+                FeedUrl: 'https://spacemy.xlog.app/feed',
+                itemTitle: '.topic_header'
+            });
+        });
+    </script>
+</body>
 </html>
