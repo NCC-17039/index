@@ -84,9 +84,7 @@ document.oncut = function() { return false; };
         <div id="screen">
           <div id="innercontent">
             <div class="topic_header">查看最新文章</div>
-              <!-- RSS 订阅源的容器 -->
-    <div id="rss-feed"></div>
-    <!-- 初始化 FeedEk -->
+    <div id="rss-feed">
     <script>
         $(document).ready(function() {
             $('#rss-feed').FeedEk({
@@ -95,10 +93,9 @@ document.oncut = function() { return false; };
             });
         });
     </script>
+      </div>
             <div class="topic_header">查看2023年12月10日以前的文章</div>
-            <!-- RSS 订阅源的容器 -->
-    <div id="rss-feed"></div>
-    <!-- 初始化 FeedEk -->
+    <div id="rss-feed">
     <script>
         $(document).ready(function() {
             $('#rss-feed').FeedEk({
@@ -107,6 +104,7 @@ document.oncut = function() { return false; };
             });
         });
     </script>
+            </div>
           </div>
         </div>
       </div>
