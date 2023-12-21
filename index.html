@@ -8,11 +8,10 @@
     <title>Julian Bashir</title>
     
     <!-- CSS等  -->
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="https://starshine.love/index.css">
     <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
     
     <!-- 网站建站日期显示  -->
 <script language=javascript>
@@ -293,7 +292,7 @@ document.oncut = function() { return false; };
                                     <iframe width="750" height="750" frameborder="0" src="https://cn.bing.com/maps/embed?h=750&w=750&cp=nq3b7ntdhwf3&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
                                     </iframe>
                                 </div>-->
-                                <div id="container"></div>
+                                 <div id="container"></div>
 <!-- 加载地图JSAPI脚本 -->
 <script src="https://webapi.amap.com/maps?v=1.4.15&key=2be50f08faff72b2039a6d6eccf2bd13"></script>
 <script>
@@ -306,6 +305,22 @@ document.oncut = function() { return false; };
     var container = document.getElementById('container');
     container.style.width = '800px'; // 设置地图容器宽度
     container.style.height = '600px'; // 设置地图容器高度
+        // 添加文字框
+    var textElement = document.createElement('div');
+    textElement.style.position = 'absolute';
+    textElement.style.bottom = '10px'; // 距离底部的距离
+    textElement.style.right = '10px'; // 距离右侧的距离
+    textElement.style.backgroundColor = 'white'; // 文字框背景色
+    textElement.style.padding = '10px'; // 文字框内边距
+    textElement.style.border = '1px solid #ccc'; // 文字框边框
+
+    // 获取页面整体字体样式
+    var bodyStyle = window.getComputedStyle(document.body);
+    textElement.style.fontFamily = bodyStyle.fontFamily; // 设置文字框字体为页面整体字体
+
+    textElement.textContent = '湖南省长沙市'; // 文字内容
+
+    container.appendChild(textElement);
 </script>
                                 </centre>
                             </div>
