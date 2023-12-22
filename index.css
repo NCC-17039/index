@@ -1,8 +1,8 @@
 /* 亮色模式样式 */
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC:100,200,300,400,500,600,700|Roboto:300,400,500,700,900&display=swap");
+@import url("https://font.sec.miui.com/font/css?family=MiSans:400,500:Chinese_Simplify,Latin&display=swap");
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Noto Serif SC", sans-serif;
+  font-family: "MiSans", sans-serif;
   color: #222222;
   line-height: 1.2em;
   margin-bottom: 0;
@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 body, p {
-  font-family: "Noto Serif SC", sans-serif;
+  font-family: "MiSans", sans-serif;
 }
 
 @media (max-width: 565px) {
