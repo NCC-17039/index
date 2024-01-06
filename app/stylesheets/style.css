@@ -1,21 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC:100,200,300,400,500,600,700|Roboto:300,400,500,700,900&amp;display=swap");
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Noto Serif SC", sans-serif;
-}
 html,
-body {
-  font-family: "Noto Serif SC", sans-serif;
-  background-color: #444444;
-  color: #ddd;
-  font-size: 16px;
-  font-family: monospace;
-}
 
 *,
 *:before,
